@@ -16,7 +16,9 @@ public class Car implements Driveable {
     }
 
     public void setMaxSpeed(int maxSpeed) {
-        MaxSpeed = maxSpeed;
+
+        if (maxSpeed > Maxspeed || maxSpeed < Minspeed) { MaxSpeed = Maxspeed;}
+        else MaxSpeed = maxSpeed;
     }
 
     public int getMaxSpeed() {
@@ -43,6 +45,7 @@ public class Car implements Driveable {
         setEngine(in);
         setWheel(in);
         if (in = false) {setMaxSpeed(0);}
+        else setMaxSpeed(100); //как вернуть в начальное состояние?
     }
 
     public void Info(){

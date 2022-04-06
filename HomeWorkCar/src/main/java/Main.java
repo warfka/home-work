@@ -6,5 +6,10 @@ public class Main {
     SportCar.Drive(true);
     SportCar.setEngine(false);
     SportCar.setMaxSpeed(350);
+    Truck Kamaz = new Truck(90, false, false, false);
+    Kamaz.Drive(true);
+    Kamaz.Drive(false);
+    Kamaz.setTruckBody(true);
+    Kamaz.setTruckBody(false);
     }
 }
