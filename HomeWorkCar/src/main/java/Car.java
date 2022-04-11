@@ -48,7 +48,9 @@ public class Car implements Driveable {
         else setMaxSpeed(100); //как вернуть в начальное состояние?
     }
 
-    public void Info(){
-
+    public String Info(){
+    String getInfo;
+    getInfo = "Max speed: " + Integer.toString(getMaxSpeed()) + "\nEngine: " + isEngine() + "\nWheel: " + isWheel();
+    return getInfo;
     }
 }
