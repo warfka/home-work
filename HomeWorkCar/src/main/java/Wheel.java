@@ -1,11 +1,11 @@
 public class Wheel {
     private Double coefficientOfAdhesion; //коэффициент сцепления
-    private String forWhatCar;
+    private String WheelForWhatCar;
     private int rotationSpeed;
 
-    public Wheel(Double coefficientOfAdhesion, String forWhatCar, int rotationSpeed) {
+    public Wheel(Double coefficientOfAdhesion, String WheelForWhatCar, int rotationSpeed) {
         this.coefficientOfAdhesion = coefficientOfAdhesion;
-        this.forWhatCar = forWhatCar;
+        this.WheelForWhatCar = WheelForWhatCar;
         this.rotationSpeed = rotationSpeed;
     }
 
@@ -18,12 +18,12 @@ public class Wheel {
         this.coefficientOfAdhesion = coefficientOfAdhesion;
     }
 
-    public String getForWhatCar() {
-        return forWhatCar;
+    public String getWheelForWhatCar() {
+        return WheelForWhatCar;
     }
 
-    public void setForWhatCar(String forWhatCar) {
-        this.forWhatCar = forWhatCar;
+    public void setWheelForWhatCar(String wheelForWhatCar) {
+        this.WheelForWhatCar = wheelForWhatCar;
     }
 
     public int getRotationSpeed() {

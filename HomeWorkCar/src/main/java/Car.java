@@ -3,26 +3,26 @@ public class Car implements Driveable {
     private static final int MAXSPEED = 999;
     private static final int MINSPEED = 0;
 
-    private int MaxSpeed;
+    private int maxSpeed;
     private Wheel wheel;
-    private int Weight;
-    private boolean Engine;
+    private int carWeight;
+    private Engine engine;
 
-    public Car(int maxSpeed, Wheel wheel, boolean engine) {
-        this.MaxSpeed = maxSpeed;
+    public Car(int maxSpeed, Wheel wheel, Engine engine) {
+        this.maxSpeed = maxSpeed;
         this.wheel = wheel;
-        this.Engine = engine;
+        this.engine = engine;
 
     }
 
     public void setMaxSpeed(int maxSpeed) {
 
-        if (maxSpeed > MAXSPEED || maxSpeed < MINSPEED) { MaxSpeed = MAXSPEED;}
-        else MaxSpeed = maxSpeed;
+        if (maxSpeed > MAXSPEED || maxSpeed < MINSPEED) { this.maxSpeed = MAXSPEED;}
+        else this.maxSpeed = maxSpeed;
     }
 
     public int getMaxSpeed() {
-        return MaxSpeed;
+        return maxSpeed;
     }
 
     public int getWheel() {//test
@@ -33,34 +33,34 @@ public class Car implements Driveable {
         this.wheel = wheel;
     }
 
-    public boolean isEngine() {
-        return Engine;
+    public int isEngine() {
+        return engine.getEngineSpeed();
     }
 
-    public void setEngine(boolean engine) {
-        Engine = engine;
+    public void setEngine(Engine engine) {
+        this.engine = engine;
     }
 
-    public int getWeight() {
-        return Weight;
+    public int getCarWeight() {
+        return carWeight;
     }
 
-    public void setWeight(int weight) {
-        Weight = weight;
+    public void setCarWeight(int carWeight) {
+        this.carWeight = carWeight;
     }
 
-    public void Drive(boolean in, Wheel wheel){//test
-        setEngine(in);
+    public void Drive(Engine engine, Wheel wheel){//test
+        setEngine(this.engine);
         setWheel(wheel);
-        if (in = false) {setMaxSpeed(0);}
+        if (engine.getEngineSpeed() == 0) {setMaxSpeed(0);} //не логично
         else setMaxSpeed(100); //как вернуть в начальное состояние?
     }
 
     public String Info(){
     String getInfo;
     getInfo = "Max speed: " + Integer.toString(getMaxSpeed()) +
-            "\nEngine: " + isEngine() +
-            "\nWheel: " + getWheel();
+            "\nEngine speed: " + isEngine() +
+            "\nWheel speed: " + getWheel();
     return getInfo;
     }
 }
