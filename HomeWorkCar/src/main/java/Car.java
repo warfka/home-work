@@ -8,11 +8,15 @@ public class Car implements Driveable {
     private int carWeight;
     private Engine engine;
 
-    public Car(int maxSpeed, Wheel wheel, Engine engine) {
-        this.maxSpeed = maxSpeed;
+    public Car(Wheel wheel, Engine engine) {
         this.wheel = wheel;
         this.engine = engine;
-
+        if (engine.getEngineForWhatCar() == "SportCar")
+            this.maxSpeed = 400;
+        if (engine.getEngineForWhatCar() == "SimpleCar")
+            this.maxSpeed = 200;
+        if (engine.getEngineForWhatCar() == "Truck")
+            this.maxSpeed = 100;
     }
 
     public void setMaxSpeed(int maxSpeed) {
@@ -51,14 +55,15 @@ public class Car implements Driveable {
 
     public void Drive(Engine engine, Wheel wheel){//test
         setEngine(this.engine);
+        wheel.setRotationSpeed(10);
         setWheel(wheel);
-        if (engine.getEngineSpeed() == 0) {setMaxSpeed(0);} //не логично
-        else setMaxSpeed(100); //как вернуть в начальное состояние?
+        if (engine.getEngineSpeed() == 0) {wheel.setRotationSpeed(0);}
+        else wheel.setRotationSpeed(0);
     }
 
     public String Info(){
     String getInfo;
-    getInfo = "Max speed: " + Integer.toString(getMaxSpeed()) +
+    getInfo = engine.getEngineForWhatCar() + "\n" + "Max speed: " + Integer.toString(getMaxSpeed()) +
             "\nEngine speed: " + isEngine() +
             "\nWheel speed: " + getWheel();
     return getInfo;
