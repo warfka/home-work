@@ -12,7 +12,7 @@ public class Main {
     SportCar.Drive(engine2, sportWheel);
     SportCar.setEngine(engine1);
     SportCar.setMaxSpeed(350);
-    Truck Kamaz = new Truck(90, truckWheel, engine3, false);
+    Truck Kamaz = new Truck(truckWheel, engine3, false);
     System.out.println(Kamaz.Info());
     Kamaz.Drive(engine3, truckWheel);
     Kamaz.Drive(engine3, truckWheel);

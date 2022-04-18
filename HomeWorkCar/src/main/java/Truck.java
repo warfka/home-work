@@ -1,11 +1,11 @@
 public class Truck extends Car {
     private boolean truckBody;
-    private int bodyСapacity;
+    private int bodyCapacity;
 
-    public Truck(int maxSpeed, Wheel wheel, Engine engine, boolean truckBody) {
+    public Truck(Wheel wheel, Engine engine, boolean truckBody) {
         super(wheel, engine);
         this.truckBody = truckBody;
-        setBodyСapacityDependingOnTheEngine(engine);
+        setBodyCapacityDependingOnTheEngine(engine);
     }
 
     public boolean isTruckBody() {
@@ -16,19 +16,19 @@ public class Truck extends Car {
         this.truckBody = truckBody;
     }
 
-    public int getBodyСapacity() {
-        return bodyСapacity;
+    public int getBodyCapacity() {
+        return bodyCapacity;
     }
 
-    public void setBodyСapacityDependingOnTheEngine(Engine engine)
+    public void setBodyCapacityDependingOnTheEngine(Engine engine)
     {
         if (engine.getEngineWeight() <= 600)
-            bodyСapacity = 7000;
+            bodyCapacity = 7000;
         if (engine.getEngineWeight() > 600)
-            bodyСapacity = 20000;
+            bodyCapacity = 20000;
     }
 
-    public void setBodyСapacity(int bodyСapacity) {
-        this.bodyСapacity = bodyСapacity;
+    public void setBodyCapacity(int bodyCapacity) {
+        this.bodyCapacity = bodyCapacity;
     }
 }
